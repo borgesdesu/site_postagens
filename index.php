@@ -1,9 +1,13 @@
 <?php
 
 require_once 'App/Core/core.php';
+
+require_once 'lib/Database/Connection.php';
+
 require_once 'App/Controller/HomeController.php';
 require_once 'App/Controller/ErrorController.php';
-//require_once 'App/Model/Post.php';
+
+require_once 'App/Model/Post.php';
 
 $template = file_get_contents('App/Template/estrutura.html');
 
