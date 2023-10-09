@@ -9,6 +9,8 @@ require_once 'App/Controller/ErrorController.php';
 
 require_once 'App/Model/Post.php';
 
+require_once 'vendor/autoload.php';
+
 $template = file_get_contents('App/Template/estrutura.html');
 
 ob_start();
