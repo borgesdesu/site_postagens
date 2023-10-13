@@ -1,1 +1,2 @@
-/lib/Database
+#Arquivo de configuraçao do banco de dados
+/lib/Database/config.php
