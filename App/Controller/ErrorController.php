@@ -4,6 +4,6 @@ class ErrorController
 {
     public function index()
     {
-        echo 'Página de Erro';
+        echo "<b style='color: red;'>Página de Erro!</b>";
     }
 }

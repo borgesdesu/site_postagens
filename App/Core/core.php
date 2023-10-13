@@ -16,6 +16,12 @@ class Core
             $controller = 'ErrorController';
         }
 
-        call_user_func_array(array(new $controller, $action), array());
+        if (isset($urlGet['id']) && $urlGet['id'] != null) {
+            $id = $urlGet['id'];
+        } else {
+            $id = null;
+        }
+
+        call_user_func_array(array(new $controller, $action), array($id));
     }
 }
