@@ -66,4 +66,23 @@ class Post
 
         return true;
     }
+
+    public static function update($parameters)
+    {
+        $conn = Connection::getConn();
+
+        $sql =  $conn->prepare("UPDATE postagem SET titulo = :tit, conteudo = :cont WHERE id = :id");
+        $sql->bindValue(':tit', $parameters['titulo']);
+        $sql->bindValue(':cont', $parameters['conteudo']);
+        $sql->bindValue(':id', $parameters['id']);
+        $result = $sql->execute();
+
+        if ($result == 0) {
+            throw new Exception("Falha ao alterar publicação");
+
+            return false;
+        }
+
+        return true;
+    }
 }

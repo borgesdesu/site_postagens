@@ -40,4 +40,34 @@ class AdminController
             echo '<script>location.href="http://localhost/project_crud/?page=admin&method=create"</script>';
         }
     }
+
+    public function change($parameterId)
+    {
+        $loader = new \Twig\Loader\FilesystemLoader('App/View');
+        $twig = new \Twig\Environment($loader);
+        $template = $twig->load('update.html');
+
+        $post = Post::selectById($parameterId);
+
+        $parameters = array();
+        $parameters['id'] = $post->id;
+        $parameters['titulo'] = $post->titulo;
+        $parameters['conteudo'] = $post->conteudo;
+
+        $content = $template->render($parameters);
+
+        echo $content;
+    }
+
+    public function update()
+    {
+        try {
+            Post::update($_POST);
+            echo '<script>alert("Publicação alterada com sucesso!");</script>';
+            echo '<script>location.href="http://localhost/project_crud/?page=admin&method=index"</script>';
+        } catch (Exception $e) {
+            echo '<script>alert("' . $e->getMessage() . '");</script>';
+            echo '<script>location.href="http://localhost/project_crud/?page=admin&method=change&id=' . $_POST['id'] . '"</script>';
+        }
+    }
 }

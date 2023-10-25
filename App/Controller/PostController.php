@@ -2,10 +2,10 @@
 
 class PostController
 {
-    public function index($params)
+    public function index($parameter)
     {
         try {
-            $post = Post::selectById($params);
+            $post = Post::selectById($parameter);
 
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
