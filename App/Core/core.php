@@ -4,10 +4,14 @@ class Core
 {
     public function start($urlGet)
     {
-        $action = 'index'; //nome do método da classe HomeController
+        if (isset($urlGet['method'])) {
+            $action = $urlGet['method'];
+        } else {
+            $action = 'index';
+        }
 
-        if (isset($urlGet['pagina'])) {
-            $controller = ucfirst($urlGet['pagina'] . 'Controller');
+        if (isset($urlGet['page'])) {
+            $controller = ucfirst($urlGet['page'] . 'Controller');
         } else {
             $controller = 'HomeController';
         }

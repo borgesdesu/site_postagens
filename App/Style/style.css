@@ -46,12 +46,32 @@ body {
     margin-bottom: 20px;
 }
 
+#conteudo a {
+    text-decoration: none;
+    color: #bebebe;
+}
+#conteudo table {
+    border-collapse: collapse;
+}
+
+#conteudo table tr th {
+    padding: 5px;
+    color: white;
+    border: 1px solid;
+    width: 15%;
+}
+
 article {
     margin-bottom: 20px;
 }
 
 article h2 {
     margin-bottom: 3px;
+}
+
+article h3 {
+    color: #FFF;
+    font-size: 15px;
 }
 
 article h2 a {
@@ -69,3 +89,18 @@ article p{
     padding-left: 15px;
     color:#bebebe;
 }
+
+form span {
+    color: #FFF;
+}
+
+form input {
+    width: 650px;
+}
+
+.admin__dashboard {
+    float: right;
+}
+
+
+

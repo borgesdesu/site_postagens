@@ -5,5 +5,22 @@
         </header>
 
         <p style="color: #bebebe">{{conteudo}}</p>
+
+        <br>
+        <hr>
+        <br>
+
+        {% if comentarios == false %}
+        <p>Nenhum comentário encontrado</p>
+        {% else %}
+        {% for comentario in comentarios %}
+        <h3>{{comentario.nome}}</h3>
+        <p>{{comentario.mensagem}}</p>
+        <br>
+        {% endfor %}
+        {% endif %}
+
     </article>
 </section>
+
+<!-- PROBLEMA NO IF, QUANDO O ARRAY ESTÁ VAZIO, ELE NAO TA RETORNANDO A MENSAGEM "Nenhum comentário encontrado" -->
