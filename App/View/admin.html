@@ -18,7 +18,7 @@
         <th>{{postagem.id}}</th>
         <th>{{postagem.titulo}}</th>
         <th><a href="http://localhost/project_crud/?page=admin&method=change&id={{postagem.id}}">ALTERAÇÃO</a></th>
-        <th>DELEÇÃO</th>
+        <th><a href="http://localhost/project_crud/?page=admin&method=delete&id={{postagem.id}}">DELEÇÃO</a></th>
     </tr>
     {% endfor %}
 </table>

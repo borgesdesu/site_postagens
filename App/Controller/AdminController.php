@@ -70,4 +70,17 @@ class AdminController
             echo '<script>location.href="http://localhost/project_crud/?page=admin&method=change&id=' . $_POST['id'] . '"</script>';
         }
     }
+
+    public function delete($parameterId)
+    {
+        try {
+            Post::delete($parameterId);
+
+            echo '<script>alert("Publicação deletada com sucesso!");</script>';
+            echo '<script>location.href="http://localhost/project_crud/?page=admin&method=index"</script>';
+        } catch (Exception $e) {
+            echo '<script>alert("' . $e->getMessage() . '");</script>';
+            echo '<script>location.href="http://localhost/project_crud/?page=admin&method=index' . $_POST['id'] . '"</script>';
+        }
+    }
 }
